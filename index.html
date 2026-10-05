@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dr. Khadija Kishimba — Project Discovery Questionnaire</title>
+
+  <style>
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --light: #f5f5f5;
+      --mid: #777777;
+      --border: #dddddd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--black);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(850px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 70px 0 45px;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: Futura, "Century Gothic", Arial, Helvetica, sans-serif;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.05;
+      font-weight: 500;
+      margin: 0 0 25px;
+    }
+
+    .intro {
+      max-width: 720px;
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .note {
+      margin-top: 30px;
+      padding: 20px 22px;
+      background: var(--light);
+      border-left: 3px solid var(--black);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .note a {
+      color: var(--black);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 50px 0 80px;
+    }
+
+    section {
+      margin-bottom: 65px;
+    }
+
+    .section-number {
+      font-family: Futura, "Century Gothic", Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: Futura, "Century Gothic", Arial, Helvetica, sans-serif;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0 0 35px;
+    }
+
+    .question {
+      margin-bottom: 42px;
+    }
+
+    .question-number {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.4;
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+
+    .question-description {
+      color: #444444;
+      font-size: 14px;
+      margin: 0 0 18px;
+    }
+
+    .option-group {
+      display: grid;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    label.option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    label.option input {
+      margin-top: 5px;
+      flex: 0 0 auto;
+    }
+
+    textarea,
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      border: 1px solid var(--border);
+      padding: 14px;
+      font: inherit;
+      font-size: 15px;
+      background: var(--white);
+      color: var(--black);
+      border-radius: 0;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    textarea:focus,
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      outline: none;
+      border-color: var(--black);
+    }
+
+    .field {
+      margin-top: 20px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .data-note {
+      margin: 30px 0;
+      padding: 20px 22px;
+      background: var(--light);
+      border-left: 3px solid var(--black);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .data-note p {
+      margin: 0;
+    }
+
+    .data-note strong {
+      font-family: Futura, "Century Gothic", Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .submit-area {
+      padding-top: 20px;
+      border-top: 1px solid var(--black);
+    }
+
+    button {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      padding: 16px 28px;
+      font-family: Futura, "Century Gothic", Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: wait;
+    }
+
+    #form-status {
+      margin-top: 20px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .success-message {
+      padding: 25px;
+      background: var(--light);
+      border-left: 3px solid var(--black);
+    }
+
+    .success-message h2 {
+      margin-bottom: 15px;
+    }
+
+    .error-message {
+      color: #8a0000;
+    }
+
+    footer {
+      border-top: 1px solid var(--black);
+      padding: 30px 0 50px;
+      font-size: 13px;
+      color: var(--mid);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 30px, 850px);
+      }
+
+      header {
+        padding: 45px 0 35px;
+      }
+
+      main {
+        padding: 40px 0 60px;
+      }
+
+      section {
+        margin-bottom: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+
+      <div class="eyebrow">
+        Ace Pen Studio · Discovery Phase
+      </div>
+
+      <h1>
+        Dr. Khadija Kishimba —<br>
+        Project Discovery Questionnaire
+      </h1>
+
+      <p class="intro">
+        This questionnaire is part of the Discovery Phase for
+        <em>Beyond the Classroom</em>. Its purpose is to help us understand
+        what you hope to build around the project, where you see yourself
+        going, and what is already underway.
+      </p>
+
+      <div class="note">
+        <strong>Why we're doing this.</strong><br><br>
+
+        This questionnaire is part of the Discovery Phase for
+        <em>Beyond the Classroom</em>. Before we develop a proposal or
+        recommend a way forward, we want to understand the project as a whole:
+        what you hope to build around the book, where you see yourself going,
+        who you want to reach, what is already in motion, and where you see
+        Ace Pen Studio fitting into that picture.
+        <br><br>
+
+        There are no right or wrong answers here, and you do not need to have
+        everything figured out. The purpose is to give us enough context to
+        think with you about the project's direction, structure and
+        possibilities.
+        <br><br>
+
+        If you have general questions about publishing or how publishing
+        works, you can find answers in the
+        <a
+          href="https://acepenstudios.github.io/acepenstudiowebsite/faqs.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Ace Pen Studio FAQs</a>.
+        <br><br>
+
+        This questionnaire is specifically about your project and what you
+        would like to build around <em>Beyond the Classroom</em>.
+      </div>
+
+    </div>
+  </header>
+
+
+  <main>
+    <div class="container">
+
+      <form
+        id="discovery-form"
+        action="https://formspree.io/f/xaeykzop"
+        method="POST"
+      >
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="Beyond the Classroom — Project Discovery Questionnaire"
+        >
+
+
+        <!-- 01 -->
+        <section>
+
+          <div class="section-number">01</div>
+          <h2>The Work You're Building</h2>
+
+
+          <div class="question">
+
+            <div class="question-number">1.1</div>
+
+            <h3>Looking ahead</h3>
+
+            <p class="question-description">
+              Looking beyond the immediate book or launch, what would you
+              like to see grow out of <em>Beyond the Classroom</em>?
+            </p>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Stronger public profile">
+                Stronger public profile
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Recognised body of work around mentorship, coaching or education">
+                Recognised body of work around mentorship, coaching or education
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Speaking and thought leadership">
+                Speaking and thought leadership
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Workshops and training">
+                Workshops and training
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Career coaching or mentorship">
+                Career coaching or mentorship
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Conferences and dialogue">
+                Conferences and dialogue
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Stronger book presence">
+                Stronger book presence
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Policymaker and institution conversations">
+                Policymaker and institution conversations
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Foundation">
+                Foundation
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Media, podcast or conversation platform">
+                Media, podcast or conversation platform
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Further books or publications">
+                Further books or publications
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Partnerships">
+                Partnerships
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="looking_ahead[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="looking_ahead_other">
+                Tell us more, if useful
+              </label>
+
+              <textarea
+                id="looking_ahead_other"
+                name="looking_ahead_other"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="question-number">1.2</div>
+
+            <h3>What do you want Khadija to be known for?</h3>
+
+            <p class="question-description">
+              Which areas do you most want your public work to be associated with?
+            </p>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Mentorship">
+                Mentorship
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Career development">
+                Career development
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Business coaching">
+                Business coaching
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Leadership">
+                Leadership
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Financial literacy">
+                Financial literacy
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Youth development">
+                Youth development
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Women's development">
+                Women's development
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Public speaking">
+                Public speaking
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Writing and publishing">
+                Writing and publishing
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Policy or institutional dialogue">
+                Policy or institutional dialogue
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Research and knowledge sharing">
+                Research and knowledge sharing
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Entrepreneurship">
+                Entrepreneurship
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Education beyond formal classroom">
+                Education beyond formal classroom
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Bringing people together">
+                Bringing people together
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="known_for[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="known_for_other">
+                Tell us more, if useful
+              </label>
+
+              <textarea
+                id="known_for_other"
+                name="known_for_other"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="question-number">1.3</div>
+
+            <h3>Taking your experience with you</h3>
+
+            <p class="question-description">
+              Which parts of your existing experience do you want to carry
+              forward into this next chapter?
+            </p>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="experience[]" value="Financial sector">
+                Financial sector
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="experience[]" value="Consumer protection">
+                Consumer protection
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="experience[]" value="Financial literacy">
+                Financial literacy
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="experience[]" value="Financial inclusion">
+                Financial inclusion
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="experience[]" value="Policy">
+                Policy
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="experience[]" value="Research">
+                Research
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="experience[]" value="Leadership">
+                Leadership
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="experience[]" value="Training">
+                Training
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="experience[]" value="Moderation and speaking">
+                Moderation and speaking
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="experience[]" value="Mentorship and coaching">
+                Mentorship and coaching
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="experience[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="experience_outside">
+                Do you want this expertise to reach outside traditional professional spaces?
+              </label>
+
+              <textarea
+                id="experience_outside"
+                name="experience_outside"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="question-number">1.4</div>
+
+            <h3>The transition</h3>
+
+            <p class="question-description">
+              How does your current professional identity relate to where
+              you see yourself going?
+            </p>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="radio" name="transition" value="Current professional identity reflects the future">
+                My current professional identity already reflects where I am going
+              </label>
+
+              <label class="option">
+                <input type="radio" name="transition" value="I want to reach a wider audience">
+                I want to reach a wider audience
+              </label>
+
+              <label class="option">
+                <input type="radio" name="transition" value="I see myself as more than my current role">
+                I see myself as more than my current role
+              </label>
+
+              <label class="option">
+                <input type="radio" name="transition" value="I am moving into new areas">
+                I am moving into new areas
+              </label>
+
+              <label class="option">
+                <input type="radio" name="transition" value="I am entering a new public chapter">
+                I am entering a new public chapter
+              </label>
+
+              <label class="option">
+                <input type="radio" name="transition" value="Still figuring it out">
+                I'm still figuring it out
+              </label>
+
+              <label class="option">
+                <input type="radio" name="transition" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="transition_details">
+                Tell us more
+              </label>
+
+              <textarea
+                id="transition_details"
+                name="transition_details"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- 02 -->
+        <section>
+
+          <div class="section-number">02</div>
+          <h2>The People You Want to Reach</h2>
+
+
+          <div class="question">
+
+            <div class="question-number">2.1</div>
+
+            <h3>Who knows Khadija today?</h3>
+
+            <p class="question-description">
+              Who currently knows your work, and what are you primarily
+              known for among those audiences?
+            </p>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="current_audience[]" value="Financial professionals">
+                Financial professionals
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="current_audience[]" value="Government and policymakers">
+                Government and policymakers
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="current_audience[]" value="Academics and researchers">
+                Academics and researchers
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="current_audience[]" value="Young people">
+                Young people
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="current_audience[]" value="Entrepreneurs and business owners">
+                Entrepreneurs and business owners
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="current_audience[]" value="Women">
+                Women
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="current_audience[]" value="Professional networks">
+                Professional networks
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="current_audience[]" value="Community members">
+                Community members
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="current_audience[]" value="Media and public">
+                Media and public
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="current_audience[]" value="Students">
+                Students
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="current_audience[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="current_reputation">
+                What are you currently known for?
+              </label>
+
+              <textarea
+                id="current_reputation"
+                name="current_reputation"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="question-number">2.2</div>
+
+            <h3>Who would you like to reach next?</h3>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="Young people">
+                Young people
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="Students">
+                Students
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="Professionals">
+                Professionals
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="Entrepreneurs">
+                Entrepreneurs
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="Women">
+                Women
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="Policymakers and decision-makers">
+                Policymakers and decision-makers
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="Academics">
+                Academics
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="Institutions">
+                Institutions
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="Community leaders">
+                Community leaders
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="Parents and families">
+                Parents and families
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="General public">
+                General public
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="future_audience[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="future_audience_details">
+                Tell us more about the people you want to reach
+              </label>
+
+              <textarea
+                id="future_audience_details"
+                name="future_audience_details"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- 03 -->
+        <section>
+
+          <div class="section-number">03</div>
+          <h2>The Ideas at the Heart of It</h2>
+
+
+          <div class="question">
+
+            <div class="question-number">3.1</div>
+
+            <h3>Which themes sit at the heart of the project?</h3>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Education and learning">
+                Education and learning
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Career">
+                Career
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Personal development">
+                Personal development
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Financial literacy">
+                Financial literacy
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Leadership">
+                Leadership
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Entrepreneurship and business">
+                Entrepreneurship and business
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Youth opportunity">
+                Youth opportunity
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Women's development">
+                Women's development
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Mentorship">
+                Mentorship
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Policy and social systems">
+                Policy and social systems
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Intergenerational knowledge">
+                Intergenerational knowledge
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Life after formal education">
+                Life after formal education
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="themes[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="themes_details">
+                Tell us more about the ideas that matter most to you
+              </label>
+
+              <textarea
+                id="themes_details"
+                name="themes_details"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="question-number">3.2</div>
+
+            <h3>
+              What do you want <em>Beyond the Classroom</em> to open up?
+            </h3>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="open_up[]" value="Speaking">
+                Speaking
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="open_up[]" value="Workshops and training">
+                Workshops and training
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="open_up[]" value="Career coaching">
+                Career coaching
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="open_up[]" value="Mentorship">
+                Mentorship
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="open_up[]" value="Media">
+                Media
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="open_up[]" value="Institutional dialogue">
+                Institutional dialogue
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="open_up[]" value="Partnerships">
+                Partnerships
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="open_up[]" value="Conferences">
+                Conferences
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="open_up[]" value="Foundation programmes">
+                Foundation programmes
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="open_up[]" value="Further writing">
+                Further writing
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="open_up[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="open_up_details">
+                Tell us more, if useful
+              </label>
+
+              <textarea
+                id="open_up_details"
+                name="open_up_details"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- 04 -->
+        <section>
+
+          <div class="section-number">04</div>
+          <h2>What Is Already in Motion?</h2>
+
+
+          <div class="question">
+
+            <div class="question-number">4.1</div>
+
+            <h3>What is already happening or being planned?</h3>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Book launch">
+                Book launch
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Speaking engagements">
+                Speaking engagements
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Media appearances">
+                Media appearances
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Workshops">
+                Workshops
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Career coaching">
+                Career coaching
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Mentorship">
+                Mentorship
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Kishimba Conferences">
+                Kishimba Conferences
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Policy and institutional dialogues">
+                Policy and institutional dialogues
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Foundation programmes">
+                Foundation programmes
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Babu Ongea na Mjukuu">
+                Babu Ongea na Mjukuu
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Conversations with artists, academics or policymakers">
+                Conversations with artists, academics or policymakers
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="activities[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label">
+                Current status
+              </label>
+
+              <div class="option-group">
+
+                <label class="option">
+                  <input type="radio" name="activity_status" value="Just an idea">
+                  Just an idea
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="activity_status" value="Discussed">
+                  Discussed
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="activity_status" value="Planned">
+                  Planned
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="activity_status" value="Confirmed">
+                  Confirmed
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="activity_status" value="Already happening">
+                  Already happening
+                </label>
+
+              </div>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="existing_commitments">
+                Existing commitments or details
+              </label>
+
+              <textarea
+                id="existing_commitments"
+                name="existing_commitments"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="question-number">4.2</div>
+
+            <h3>Who is already involved?</h3>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="people_involved[]" value="Foundation">
+                Foundation
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="people_involved[]" value="Publishing or production">
+                Publishing or production
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="people_involved[]" value="Professional networks">
+                Professional networks
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="people_involved[]" value="Sponsors or funders">
+                Sponsors or funders
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="people_involved[]" value="Media relationships">
+                Media relationships
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="people_involved[]" value="Speakers or collaborators">
+                Speakers or collaborators
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="people_involved[]" value="Venues">
+                Venues
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="people_involved[]" value="Existing audiences or communities">
+                Existing audiences or communities
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="people_involved[]" value="Existing programmes">
+                Existing programmes
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="people_involved[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="people_involved_details">
+                Tell us who is involved and what role they currently have
+              </label>
+
+              <textarea
+                id="people_involved_details"
+                name="people_involved_details"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="question-number">4.3</div>
+
+            <h3>Are there any fixed dates or commitments?</h3>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="fixed_commitments[]" value="Publication deadline">
+                Publication deadline
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="fixed_commitments[]" value="Launch date">
+                Launch date
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="fixed_commitments[]" value="Conference or event date">
+                Conference or event date
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="fixed_commitments[]" value="Existing agreement or contract">
+                Existing agreement or contract
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="fixed_commitments[]" value="Funding commitment">
+                Funding commitment
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="fixed_commitments[]" value="Other">
+                Other
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="fixed_commitments[]" value="Nothing fixed">
+                Nothing fixed
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="fixed_commitments[]" value="Not sure">
+                Not sure
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="timing_details">
+                Please tell us about any important dates or timing considerations
+              </label>
+
+              <textarea
+                id="timing_details"
+                name="timing_details"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- 05 -->
+        <section>
+
+          <div class="section-number">05</div>
+          <h2>The Book &amp; Publishing</h2>
+
+
+          <div class="question">
+
+            <div class="question-number">5.1</div>
+
+            <h3>English and Kiswahili editions</h3>
+
+            <p class="question-description">
+              Please indicate where each edition currently stands.
+            </p>
+
+
+            <div class="field">
+
+              <label class="field-label">
+                English edition
+              </label>
+
+              <div class="option-group">
+
+                <label class="option">
+                  <input type="radio" name="english_status" value="Not started">
+                  Not started
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="english_status" value="Editing">
+                  Editing
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="english_status" value="Production">
+                  Production
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="english_status" value="Nearly complete">
+                  Nearly complete
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="english_status" value="Complete">
+                  Complete
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="english_status" value="Not sure">
+                  Not sure
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <div class="field">
+
+              <label class="field-label">
+                Kiswahili edition
+              </label>
+
+              <div class="option-group">
+
+                <label class="option">
+                  <input type="radio" name="kiswahili_status" value="Not started">
+                  Not started
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="kiswahili_status" value="Editing">
+                  Editing
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="kiswahili_status" value="Production">
+                  Production
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="kiswahili_status" value="Nearly complete">
+                  Nearly complete
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="kiswahili_status" value="Complete">
+                  Complete
+                </label>
+
+                <label class="option">
+                  <input type="radio" name="kiswahili_status" value="Not sure">
+                  Not sure
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <div class="field">
+
+              <label class="field-label">
+                What does the current publishing arrangement cover?
+              </label>
+
+              <div class="option-group">
+
+                <label class="option">
+                  <input type="checkbox" name="publishing_arrangement[]" value="Editing">
+                  Editing
+                </label>
+
+                <label class="option">
+                  <input type="checkbox" name="publishing_arrangement[]" value="Translation">
+                  Translation
+                </label>
+
+                <label class="option">
+                  <input type="checkbox" name="publishing_arrangement[]" value="Design and typesetting">
+                  Design and typesetting
+                </label>
+
+                <label class="option">
+                  <input type="checkbox" name="publishing_arrangement[]" value="Printing">
+                  Printing
+                </label>
+
+                <label class="option">
+                  <input type="checkbox" name="publishing_arrangement[]" value="Distribution">
+                  Distribution
+                </label>
+
+                <label class="option">
+                  <input type="checkbox" name="publishing_arrangement[]" value="Marketing and promotion">
+                  Marketing and promotion
+                </label>
+
+                <label class="option">
+                  <input type="checkbox" name="publishing_arrangement[]" value="Other">
+                  Other
+                </label>
+
+                <label class="option">
+                  <input type="checkbox" name="publishing_arrangement[]" value="Not sure">
+                  Not sure
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="question-number">5.2</div>
+
+            <h3>What do you see the two editions doing?</h3>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="edition_purpose[]" value="Different audiences">
+                Reaching different audiences
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="edition_purpose[]" value="Different markets">
+                Serving different markets
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="edition_purpose[]" value="Different purposes">
+                Serving different purposes
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="edition_purpose[]" value="Equally important">
+                Being equally important
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="edition_purpose[]" value="Kiswahili primary">
+                Kiswahili being primary
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="edition_purpose[]" value="English primary">
+                English being primary
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="edition_purpose[]" value="Supporting each other">
+                Supporting each other
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="edition_purpose[]" value="Still deciding">
+                Still deciding
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="edition_purpose_details">
+                Tell us more about how you see the two editions working
+              </label>
+
+              <textarea
+                id="edition_purpose_details"
+                name="edition_purpose_details"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- 06 -->
+        <section>
+
+          <div class="section-number">06</div>
+          <h2>The Foundation &amp; Legacy</h2>
+
+
+          <div class="question">
+
+            <div class="question-number">6.1</div>
+
+            <h3>How does the Foundation fit into the bigger picture?</h3>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="foundation_fit[]" value="Youth">
+                Youth
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="foundation_fit[]" value="Education and knowledge">
+                Education and knowledge
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="foundation_fit[]" value="Mentorship">
+                Mentorship
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="foundation_fit[]" value="Community">
+                Community
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="foundation_fit[]" value="Policy and institutional engagement">
+                Policy and institutional engagement
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="foundation_fit[]" value="Intergenerational exchange">
+                Intergenerational exchange
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="foundation_fit[]" value="Preserving and continuing legacy">
+                Preserving and continuing legacy
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="foundation_fit[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="foundation_details">
+                Tell us more about what you want the Foundation to do
+              </label>
+
+              <textarea
+                id="foundation_details"
+                name="foundation_details"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="question-number">6.2</div>
+
+            <h3>What should this work mean in the long term?</h3>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="legacy_meaning[]" value="Sharing knowledge">
+                Sharing knowledge
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="legacy_meaning[]" value="Helping young people build careers">
+                Helping young people build careers
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="legacy_meaning[]" value="Creating opportunities">
+                Creating opportunities
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="legacy_meaning[]" value="Influencing institutions and policymakers">
+                Influencing institutions and policymakers
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="legacy_meaning[]" value="Creating meaningful conversations">
+                Creating meaningful conversations
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="legacy_meaning[]" value="Building beyond yourself">
+                Building something that continues beyond me
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="legacy_meaning[]" value="Developing future leaders">
+                Developing future leaders
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="legacy_meaning[]" value="Family or creative legacy">
+                Family or creative legacy
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="legacy_meaning[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="legacy_details">
+                Tell us more
+              </label>
+
+              <textarea
+                id="legacy_details"
+                name="legacy_details"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- 07 -->
+        <section>
+
+          <div class="section-number">07</div>
+          <h2>Working With Ace Pen</h2>
+
+
+          <div class="question">
+
+            <div class="question-number">7.1</div>
+
+            <h3>Where could Ace Pen Studio be most useful?</h3>
+
+            <p class="question-description">
+              You do not need to know exactly what you need from us.
+              These options simply help us understand where you see our
+              role fitting into the larger project.
+            </p>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Overall project">
+                Overall project
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Architecture and planning">
+                Architecture and planning
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Literary strategy">
+                Literary strategy
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Positioning">
+                Positioning
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Publishing strategy">
+                Publishing strategy
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Coordination">
+                Coordination
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Events and conferences">
+                Events and conferences
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Workshops and programmes">
+                Workshops and programmes
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Partnerships and stakeholders">
+                Partnerships and stakeholders
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Media and content">
+                Media and content
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Audience development">
+                Audience development
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="ace_pen_role[]" value="Other">
+                Other
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="ace_pen_role_details">
+                Tell us more, if useful
+              </label>
+
+              <textarea
+                id="ace_pen_role_details"
+                name="ace_pen_role_details"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="question-number">7.2</div>
+
+            <h3>Who else is involved or expected to be involved?</h3>
+
+            <div class="option-group">
+
+              <label class="option">
+                <input type="checkbox" name="other_partners[]" value="Publishing or production">
+                Publishing or production
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="other_partners[]" value="Events">
+                Events
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="other_partners[]" value="Media">
+                Media
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="other_partners[]" value="Foundation operations">
+                Foundation operations
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="other_partners[]" value="Training">
+                Training
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="other_partners[]" value="Communications or marketing">
+                Communications or marketing
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="other_partners[]" value="Other">
+                Other
+              </label>
+
+              <label class="option">
+                <input type="checkbox" name="other_partners[]" value="Nothing assigned">
+                Nothing assigned
+              </label>
+
+            </div>
+
+            <div class="field">
+
+              <label class="field-label" for="other_partners_details">
+                Tell us more about the people, organisations or roles involved
+              </label>
+
+              <textarea
+                id="other_partners_details"
+                name="other_partners_details"
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="question-number">7.3</div>
+
+            <h3>Anything else?</h3>
+
+            <p class="question-description">
+              Is there anything else about your vision, expectations,
+              concerns or circumstances that would help us understand
+              the project properly?
+            </p>
+
+            <textarea
+              name="anything_else"
+              id="anything_else"
+              placeholder="Anything you would like us to know..."
+            ></textarea>
+
+          </div>
+
+        </section>
+
+
+        <!-- INFORMATION -->
+
+        <div class="data-note">
+
+          <p>
+            <strong>About your information.</strong><br>
+
+            We collect the information you provide so Ace Pen Studio can
+            understand your project, respond to your inquiry, and determine
+            how we may be able to support you. We use this information only
+            for purposes connected to your inquiry and our professional
+            communication with you.
+          </p>
+
+        </div>
+
+
+        <!-- BEFORE SUBMIT -->
+
+        <section>
+
+          <div class="question">
+
+            <h3>Before you submit</h3>
+
+            <p class="question-description">
+              You do not need to send your manuscript with this questionnaire.
+              We want the context first. If we need to see your work or any
+              other documents, we will tell you what would be useful.
+            </p>
+
+          </div>
+
+
+          <div class="question">
+
+            <div class="option-group">
+
+              <label class="option">
+
+                <input
+                  type="checkbox"
+                  name="consent_information"
+                  value="I understand that the information I provide may be used by Ace Pen Studio to respond to my inquiry and determine how the studio may be able to support me."
+                  required
+                >
+
+                I understand that the information I provide may be used by
+                Ace Pen Studio to respond to my inquiry and determine how
+                the studio may be able to support me.
+
+              </label>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- SUBMIT -->
+
+        <div class="submit-area">
+
+          <button
+            type="submit"
+            id="submit-button"
+          >
+            Submit Questionnaire
+          </button>
+
+          <div
+            id="form-status"
+            aria-live="polite"
+          ></div>
+
+        </div>
+
+      </form>
+
+    </div>
+  </main>
+
+
+  <footer>
+
+    <div class="container">
+      Ace Pen Studio
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    const form = document.getElementById("discovery-form");
+    const button = document.getElementById("submit-button");
+    const status = document.getElementById("form-status");
+
+
+    form.addEventListener("submit", async function(event) {
+
+      event.preventDefault();
+
+      button.disabled = true;
+      button.textContent = "Submitting...";
+      status.innerHTML = "";
+
+
+      const formData = new FormData(form);
+
+
+      try {
+
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+
+        if (response.ok) {
+
+          form.innerHTML = `
+
+            <div class="success-message">
+
+              <h2>Thank you.</h2>
+
+              <p>
+                Your responses have been received by Ace Pen Studio.
+                We will review the project as a whole and come back to
+                you with our initial assessment and recommendations.
+              </p>
+
+              <p>
+                We appreciate you taking the time to think through
+                the questions with us.
+              </p>
+
+            </div>
+
+          `;
+
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+
+
+        } else {
+
+          status.innerHTML = `
+
+            <p class="error-message">
+              There was a problem submitting the questionnaire.
+              Please check your responses and try again.
+            </p>
+
+          `;
+
+          button.disabled = false;
+          button.textContent = "Submit Questionnaire";
+
+        }
+
+      } catch (error) {
+
+        status.innerHTML = `
+
+          <p class="error-message">
+            We could not connect to the submission service.
+            Please check your internet connection and try again.
+          </p>
+
+        `;
+
+        button.disabled = false;
+        button.textContent = "Submit Questionnaire";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
